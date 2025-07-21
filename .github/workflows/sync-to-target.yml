@@ -18,7 +18,7 @@ jobs:
     - name: Sync to target repository
       uses: actions/github-script@v7
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.SIPE_SYNC_TOKEN }}
         script: |
           const fs = require('fs');
           const path = require('path');
