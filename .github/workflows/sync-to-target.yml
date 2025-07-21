@@ -63,8 +63,8 @@ jobs:
               files.forEach(file => {
                 const filePath = path.join(dir, file);
                 if (fs.statSync(filePath).isDirectory()) {
-                  // Skip certain directories
-                  if (!file.startsWith('.') || file === '.github') {
+                  // Skip hidden directories (including .github)
+                  if (!file.startsWith('.')) {
                     getAllFiles(filePath, fileList);
                   }
                 } else {
